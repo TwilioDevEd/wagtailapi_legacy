@@ -45,7 +45,7 @@ class BaseAPIEndpoint(GenericViewSet):
         'format',
     ])
     extra_api_fields = []
-    name = None  # Set on subclass.
+    pagination_name = None  # Set on subclass.
 
     def get_queryset(self):
         return self.model.objects.all().order_by('id')
@@ -213,7 +213,7 @@ class PagesAPIEndpoint(BaseAPIEndpoint):
         'descendant_of',
     ])
     extra_api_fields = ['title']
-    name = 'pages'
+    pagination_name = 'pages'
     model = Page
 
     def get_queryset(self):
@@ -248,7 +248,7 @@ class ImagesAPIEndpoint(BaseAPIEndpoint):
     base_serializer_class = ImageSerializer
     filter_backends = [FieldsFilter, OrderingFilter, SearchFilter]
     extra_api_fields = ['title', 'tags', 'width', 'height']
-    name = 'images'
+    pagination_name = 'images'
     model = get_image_model()
 
 
@@ -256,5 +256,5 @@ class DocumentsAPIEndpoint(BaseAPIEndpoint):
     base_serializer_class = DocumentSerializer
     filter_backends = [FieldsFilter, OrderingFilter, SearchFilter]
     extra_api_fields = ['title', 'tags']
-    name = 'documents'
+    pagination_name = 'documents'
     model = get_document_model()

@@ -42,6 +42,6 @@ class WagtailPagination(BasePagination):
             ('meta', OrderedDict([
                 ('total_count', self.total_count),
             ])),
-            (self.view.name, data),
+            (self.view.pagination_name, data),
         ])
         return Response(data)
