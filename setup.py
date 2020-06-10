@@ -38,8 +38,8 @@ setup(
     ],
     extras_require={
         'testing': [
-            'Django==2.0.5',
-            'wagtail==2.0.1',
+            'Django>=3.0',
+            'wagtail>=2.9',
             'mock>=1,<2',
         ],
     },
