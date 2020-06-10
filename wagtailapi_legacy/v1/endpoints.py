@@ -14,7 +14,7 @@ from rest_framework.viewsets import GenericViewSet
 from wagtail.api import APIField
 from wagtail.core.models import Page
 from wagtail.core.utils import resolve_model_string
-from wagtail.documents.models import get_document_model
+from wagtail.documents import get_document_model
 from wagtail.images import get_image_model
 
 from .filters import ChildOfFilter, DescendantOfFilter, FieldsFilter, OrderingFilter, SearchFilter

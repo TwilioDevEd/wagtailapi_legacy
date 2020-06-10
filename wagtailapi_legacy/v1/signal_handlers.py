@@ -6,7 +6,7 @@ from django.db.models.signals import post_delete, post_save
 from wagtail.contrib.frontend_cache.utils import purge_url_from_cache
 from wagtail.core.models import get_page_models
 from wagtail.core.signals import page_published, page_unpublished
-from wagtail.documents.models import get_document_model
+from wagtail.documents import get_document_model
 from wagtail.images import get_image_model
 
 from .utils import get_base_url

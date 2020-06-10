@@ -8,7 +8,7 @@ from django.test import TestCase
 from django.test.utils import override_settings
 
 from wagtailapi_legacy.v1 import signal_handlers
-from wagtail.documents.models import get_document_model
+from wagtail.documents import get_document_model
 
 
 class TestDocumentListing(TestCase):
